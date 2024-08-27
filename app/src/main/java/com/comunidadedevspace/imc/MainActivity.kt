@@ -3,6 +3,7 @@ package com.comunidadedevspace.imc
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -16,9 +17,30 @@ class MainActivity : AppCompatActivity() {
         val calcButton = findViewById<Button>(R.id.button)
 
         calcButton.setOnClickListener {
-            val weight = edtWeight.text
-            val height = edtHeight.text
-            val result =
+            val weightStr: String = edtWeight.text.toString()
+            val heightStr: String = edtHeight.text.toString()
+
+            if(weightStr == "" || heightStr == "") {
+                Snackbar
+                    .make(
+                    edtWeight,
+                    "All fields must be filled",
+                    Snackbar.LENGTH_LONG
+                ).show()
+
+
+            } else {
+                val weight = weightStr.toFloat()
+                val height = heightStr.toFloat()
+
+
+                val heightq2 = height * height
+                val result = weight / heightq2
+            }
+
+
+
+
         }
     }
 }
