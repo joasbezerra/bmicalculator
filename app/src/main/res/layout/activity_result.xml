@@ -3,32 +3,86 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:gravity="center"
-    android:layout_gravity="center"
-
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultActivity">
+    tools:context=".ResultActivity"
+    android:gravity="center_horizontal">
 
-    <TextView
-        android:id="@+id/tv_result"
-        android:textSize="50sp"
-        android:maxLength="4"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:id="@+id/vg_header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="24.6" />
+        android:background="@drawable/bg_gradient"
+        android:orientation="vertical">
+
+        <ImageView
+            android:src="@drawable/ic_weight"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/body_mass_index_calculator"
+            android:layout_marginStart="24dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/tv_WeightAndHeight"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Your weight: 120.00 Your Height: 1.90" />
+        <TextView
+            android:id="@+id/tv_yourResult"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/result" />
+        <TextView
+            android:id="@+id/tv_result"
+            android:gravity="center"
+            android:textSize="64sp"
+            android:textColor="@color/white"
+            android:maxLength="4"
+            android:textStyle="bold"
+            android:layout_marginBottom="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="24.6" />
+
+    </LinearLayout>
+
+
 
     <TextView
         android:id="@+id/tv_classification_label"
         android:layout_width="wrap_content"
+        android:layout_marginTop="55dp"
         android:layout_height="wrap_content"
-        android:text="Your BMI classification is:" />
+        android:text="@string/your_bmi_classification_is" />
+
     <TextView
         android:id="@+id/tv_classification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        tools:text="TextView" />
+        tools:text="NORMAL"
+        android:textSize="24sp"/>
 </LinearLayout>
+
