@@ -39,6 +39,9 @@ class MainActivity : AppCompatActivity() {
 
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra(KEY_RESULT_IMC, result)
+                intent.putExtra(KEY_HEIGHT_IMC, height)
+                intent.putExtra(KEY_WEIGHT_IMC, weight)
+
                 startActivity(intent)
             }
 
